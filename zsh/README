@@ -1,0 +1,1 @@
+This simply copies zshrc file to ~/.zshrc and then sources it. If you're running in a zsh you'll need to `zsh zshrc_setup.sh` instead of `./zshrc_setup.sh`. The same may be true for a bash shell also but I'm not really sure.
