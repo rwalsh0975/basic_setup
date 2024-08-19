@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/zsh
 
 # Define the file name and target destination
 FILE_NAME="zshrc"

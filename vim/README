@@ -1,0 +1,1 @@
+Checks if rc file exits in $HOME/.vim if not, it will create dir if need be and copy vimrc to .vimrc

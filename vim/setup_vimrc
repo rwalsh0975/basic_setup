@@ -1,0 +1,37 @@
+#!/bin/zsh
+
+# Define the file name and target destination
+FILE_NAME="vimrc"
+TARGET_DIR="$HOME/.vim"
+DESTINATION="$TARGET_DIR/vimrc"
+
+# Check if the vimrc file exists in the current directory
+if [[ -f "$FILE_NAME" ]]; then
+    # Check if the ~/.vim directory exists
+    if [[ ! -d "$TARGET_DIR" ]]; then
+        # Create the ~/.vim directory if it does not exist
+        mkdir -p "$TARGET_DIR"
+        
+        # Check if the directory creation was successful
+        if [[ $? -ne 0 ]]; then
+            echo "Failed to create directory $TARGET_DIR."
+            exit 1
+        fi
+    fi
+    
+    # Copy the vimrc file to the ~/.vim directory
+    cp "$FILE_NAME" "$DESTINATION"
+    
+    # Check if the copy was successful
+    if [[ $? -eq 0 ]]; then
+        echo "File copied successfully to $DESTINATION."
+        exit 0
+    else
+        echo "Failed to copy the file to $DESTINATION."
+        exit 1
+    fi
+else
+    echo "Error: $FILE_NAME does not exist in the current directory."
+    exit 1
+fi
+
